@@ -5,8 +5,9 @@ Install dependencies
 * Install NTLK according your OS (pkg install ntlk on FreeBSD for example)
 * Install numpy (pkg install py27-numpy)
 * Download the needed NLTK resources with ntlk.download():
-** maxent_treebank_pos_tagger
-** punkt
+  - maxent_treebank_pos_tagger
+  - punkt
+  - averaged_perceptron_tagger
 
 Source text
 -----------
