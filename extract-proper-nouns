@@ -20,18 +20,15 @@ with open (filename, "r") as file:
 # First, the punkt tokenizer divides our text in sentences.
 # Each sentence is then tokenized and POS tagged.
 sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
-word_list = []
 exclusion_list = [
     re.compile('^(?:[A-Z]\.(\s|))+$'),
     re.compile('^[a-zA-Z]$')]
 def yield_word(word):
-    if word not in word_list:
-        for pattern in exclusion_list:
-            if pattern.match(word):
-                return
-        # if reached here, this word has passed all exclusion rules.
-        word_list.append(word)
-        print(word)
+    for pattern in exclusion_list:
+        if pattern.match(word):
+            return
+    # if reached here, this word has passed all exclusion rules.
+    print(word)
 for sentence in sent_detector.tokenize(text):
     tokenizedSentence = word_tokenize(sentence)
     taggedSentence = pos_tag(tokenizedSentence)
