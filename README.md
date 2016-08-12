@@ -1,17 +1,24 @@
 This script allows to extract proper nouns from an English text with NTLK.
 
+
 Install dependencies
 --------------------
-* Install NTLK according your OS (pkg install ntlk on FreeBSD for example)
-* Install numpy (pkg install py27-numpy)
-* Download the needed NLTK resources with ntlk.download():
+* Install NLTK according your OS
+  * `pkg install nltk` on FreeBSD
+  * `pip install nltk` on macOS
+* Install numpy
+  - `pkg install py27-numpy` on FreeBSD
+  - `pip install numpy` on macOS
+* Download the needed NLTK resources with `ntlk.download()` in a python:
   - maxent_treebank_pos_tagger
   - punkt
   - averaged_perceptron_tagger
 
+
 Source text
 -----------
 You need a copy of the text you want to extract from as plain text.
+
 
 Source English word list
 ------------------------
@@ -20,15 +27,14 @@ Filename should be wordsEn.txt or modified in eliminate-common-nouns script.
 
 Such file is available at http://www-01.sil.org/linguistics/wordlists/english/
 
+
 Usage
 -----
-./extract-proper-nouns source.txt > nouns.txt
+```
+./extract-proper-nouns source.txt | sort | uniq > proper-nouns.txt
+./eliminate-common-nouns proper-nouns.txt > uncommon_proper-nouns.txt
+```
 
-To sort them and eliminate duplicates:
-./extract-proper-nouns source.txt | sort | uniq > nouns.txt
-
-To discard known English words:
-./eliminate-common-nouns nouns.txt
 
 Acknowledgment
 --------------
