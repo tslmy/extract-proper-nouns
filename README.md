@@ -33,6 +33,7 @@ Usage
 ```
 ./extract-proper-nouns source.txt | sort | uniq > proper-nouns.txt
 ./eliminate-common-nouns proper-nouns.txt > uncommon_proper-nouns.txt
+./research-with-wikipedia uncommon_proper-nouns.txt > reference-list.txt
 ```
 
 
