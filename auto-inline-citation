@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import sys
+import os.path
+import wikipedia
+# Parses arguments
+if len(sys.argv) != 3:
+    print ('Usage:', sys.argv[0], '<original article text file> <reference list text file>')
+    sys.exit(1)
+filename1 = sys.argv[1]
+if not os.path.exists(filename1):
+    print (filename1 + ': no such file')
+    sys.exit(2)
+filename2 = sys.argv[2]
+if not os.path.exists(filename2):
+    print (filename2 + ': no such file')
+    sys.exit(2)
+# get word list
+#[TODO]
