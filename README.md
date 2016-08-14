@@ -15,6 +15,7 @@ Install dependencies
   - averaged_perceptron_tagger
 
 
+
 Source text
 -----------
 You need a copy of the text you want to extract from as plain text.
@@ -34,7 +35,17 @@ Usage
 ./extract-proper-nouns source.txt | sort | uniq > proper-nouns.txt
 ./eliminate-common-nouns proper-nouns.txt > uncommon_proper-nouns.txt
 ./research-with-wikipedia uncommon_proper-nouns.txt > reference-list.txt
+./auto-inline-citation source.txt reference-list.txt > result.txt
 ```
+
+or, if you don't want a reduced list of words:
+
+```
+./extract-proper-nouns source.txt | sort | uniq > proper-nouns.txt
+./research-with-wikipedia proper-nouns.txt > reference-list.txt
+./auto-inline-citation source.txt reference-list.txt > result.txt
+```
+
 
 
 Acknowledgment
