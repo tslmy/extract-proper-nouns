@@ -1,0 +1,17 @@
+{
+  "name": "NounSense",
+  "homepage": "https://github.com/tslmy/NounSense",
+  "authors": [
+    "Mingyang Li <tslmy@outlook.com>"
+  ],
+  "description": "Writing helper that automatically finds you extended reading links from Wikipedia.",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
